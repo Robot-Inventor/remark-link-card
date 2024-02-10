@@ -26,6 +26,12 @@ If there are multiple links in one line, they will **not** be converted to link 
 
 http://example.com/ http://example.com/ http://example.com/
 
+## List items
+
+Links in list items are **not** converted to link cards.
+
+- http://example.com/
+
 ## Invalid links
 
 http://localhost:3000/rlc-simple/sample

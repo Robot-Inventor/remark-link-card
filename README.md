@@ -1,6 +1,12 @@
-# remark-link-card
+# remark-enhanced-link-card
 
-[Remark](https://github.com/remarkjs/remark) plugin to convert text links to link cards inspired by [gatsby-remark-link-card](https://github.com/JaeYeopHan/gatsby-remark-link-card)
+[Remark](https://github.com/remarkjs/remark) plugin to convert text links to link cards inspired by [gatsby-remark-enhanced-link-card](https://github.com/JaeYeopHan/gatsby-remark-enhanced-link-card)
+
+Forked from [remark-link-card](https://github.com/gladevise/remark-link-card)
+
+## Defference from remark-link-card
+
+- Exclude list items from link card conversion
 
 ## Requirements
 
@@ -9,7 +15,7 @@
 ## Install
 
 ```sh
-npm i remark-link-card
+npm i remark-enhanced-link-card
 ```
 
 ## Usage
@@ -18,10 +24,10 @@ Here is simple example.
 
 ```js
 const remark = require('remark')
-const rlc = require('remark-link-card')
+const rlc = require('remark-enhanced-link-card')
 
 const exampleMarkdown = `
-# remark-link-card
+# remark-enhanced-link-card
 
 ## Bare links
 
@@ -29,11 +35,11 @@ Bare links are converted to link cards.
 
 http://example.com/
 
-https://www.npmjs.com/package/remark-link-card
+https://www.npmjs.com/package/remark-enhanced-link-card
 
 <http://example.com/>
 
-<https://www.npmjs.com/package/remark-link-card>
+<https://www.npmjs.com/package/remark-enhanced-link-card>
 
 ## Inline links
 
@@ -41,13 +47,19 @@ Inline links are **not** converted to link cards.
 
 [example](http://example.com/) is inline link
 
-[remark-link-card](https://www.npmjs.com/package/remark-link-card) is inline link
+[remark-enhanced-link-card](https://www.npmjs.com/package/remark-enhanced-link-card) is inline link
 
 ## Multiple links in one line
 
 If there are multiple links in one line, they will **not** be converted to link cards.
 
 http://example.com/ http://example.com/ http://example.com/
+
+## List items
+
+Links in list items are **not** converted to link cards.
+
+- http://example.com/
 `;
 
 (async () => {
@@ -62,7 +74,7 @@ http://example.com/ http://example.com/ http://example.com/
 You can get converted result like this.
 
 ```markdown
-# remark-link-card
+# remark-enhanced-link-card
 
 ## Bare links
 
@@ -78,17 +90,17 @@ Bare links are converted to link cards.
   </div>
 </a>
 
-<a class="rlc-container" href="https://www.npmjs.com/package/remark-link-card">
+<a class="rlc-container" href="https://www.npmjs.com/package/remark-enhanced-link-card">
   <div class="rlc-info">
-    <div class="rlc-title">remark-link-card</div>
+    <div class="rlc-title">remark-enhanced-link-card</div>
     <div class="rlc-description">remark plugin to convert literal link to link card</div>
     <div class="rlc-url-container">
-      <img class="rlc-favicon" src="https://www.google.com/s2/favicons?domain=www.npmjs.com" alt="remark-link-card favicon" width="16px" height="16px">
-      <span class="rlc-url">https://www.npmjs.com/package/remark-link-card</span>
+      <img class="rlc-favicon" src="https://www.google.com/s2/favicons?domain=www.npmjs.com" alt="remark-enhanced-link-card favicon" width="16px" height="16px">
+      <span class="rlc-url">https://www.npmjs.com/package/remark-enhanced-link-card</span>
     </div>
   </div>
   <div class="rlc-image-container">
-    <img class="rlc-image" src="https://static.npmjs.com/338e4905a2684ca96e08c7780fc68412.png" alt="remark-link-card" width="100%" height="100%"/>
+    <img class="rlc-image" src="https://static.npmjs.com/338e4905a2684ca96e08c7780fc68412.png" alt="remark-enhanced-link-card" width="100%" height="100%"/>
   </div>
 </a>
 
@@ -102,17 +114,17 @@ Bare links are converted to link cards.
   </div>
 </a>
 
-<a class="rlc-container" href="https://www.npmjs.com/package/remark-link-card">
+<a class="rlc-container" href="https://www.npmjs.com/package/remark-enhanced-link-card">
   <div class="rlc-info">
-    <div class="rlc-title">remark-link-card</div>
+    <div class="rlc-title">remark-enhanced-link-card</div>
     <div class="rlc-description">remark plugin to convert literal link to link card</div>
     <div class="rlc-url-container">
-      <img class="rlc-favicon" src="https://www.google.com/s2/favicons?domain=www.npmjs.com" alt="remark-link-card favicon" width="16px" height="16px">
-      <span class="rlc-url">https://www.npmjs.com/package/remark-link-card</span>
+      <img class="rlc-favicon" src="https://www.google.com/s2/favicons?domain=www.npmjs.com" alt="remark-enhanced-link-card favicon" width="16px" height="16px">
+      <span class="rlc-url">https://www.npmjs.com/package/remark-enhanced-link-card</span>
     </div>
   </div>
   <div class="rlc-image-container">
-    <img class="rlc-image" src="https://static.npmjs.com/338e4905a2684ca96e08c7780fc68412.png" alt="remark-link-card" width="100%" height="100%"/>
+    <img class="rlc-image" src="https://static.npmjs.com/338e4905a2684ca96e08c7780fc68412.png" alt="remark-enhanced-link-card" width="100%" height="100%"/>
   </div>
 </a>
 
@@ -122,7 +134,7 @@ Inline links are **not** converted to link cards.
 
 [example](http://example.com/) is inline link
 
-[remark-link-card](https://www.npmjs.com/package/remark-link-card) is inline link
+[remark-enhanced-link-card](https://www.npmjs.com/package/remark-enhanced-link-card) is inline link
 
 ## Multiple links in one line
 
@@ -225,14 +237,14 @@ Convert text links to link cards.
 
 Cache image for [`next/image`](https://nextjs.org/docs/api-reference/next/image) (`bool`, default:`false`)
 
-Automatically save open graph images and favicon images to `process.cwd()/public/remark-link-card/`.
+Automatically save open graph images and favicon images to `process.cwd()/public/remark-enhanced-link-card/`.
 
-Automatically insert the path to images starting with `/remark-link-card/` in the src attribute of img tags.
+Automatically insert the path to images starting with `/remark-enhanced-link-card/` in the src attribute of img tags.
 
 So, if `options.cache` is `true`, the output will look like this.
 
 ```markdown
-# remark-link-card
+# remark-enhanced-link-card
 
 ## Bare links
 
@@ -242,23 +254,23 @@ Bare links are converted to link cards.
   <div class="rlc-info">
     <div class="rlc-title">Example Domain</div>
     <div class="rlc-url-container">
-      <img class="rlc-favicon" src="/remark-link-card/httpswww.google.coms2faviconsdomain=example.com" alt="Example Domain favicon" width="16px" height="16px">
+      <img class="rlc-favicon" src="/remark-enhanced-link-card/httpswww.google.coms2faviconsdomain=example.com" alt="Example Domain favicon" width="16px" height="16px">
       <span class="rlc-url">http://example.com/</span>
     </div>
   </div>
 </a>
 
-<a class="rlc-container" href="https://www.npmjs.com/package/remark-link-card">
+<a class="rlc-container" href="https://www.npmjs.com/package/remark-enhanced-link-card">
   <div class="rlc-info">
-    <div class="rlc-title">remark-link-card</div>
+    <div class="rlc-title">remark-enhanced-link-card</div>
     <div class="rlc-description">remark plugin to convert literal link to link card</div>
     <div class="rlc-url-container">
-      <img class="rlc-favicon" src="/remark-link-card/httpswww.google.coms2faviconsdomain=www.npmjs.com" alt="remark-link-card favicon" width="16px" height="16px">
-      <span class="rlc-url">https://www.npmjs.com/package/remark-link-card</span>
+      <img class="rlc-favicon" src="/remark-enhanced-link-card/httpswww.google.coms2faviconsdomain=www.npmjs.com" alt="remark-enhanced-link-card favicon" width="16px" height="16px">
+      <span class="rlc-url">https://www.npmjs.com/package/remark-enhanced-link-card</span>
     </div>
   </div>
   <div class="rlc-image-container">
-    <img class="rlc-image" src="/remark-link-card/httpsstatic.npmjs.com338e4905a2684ca96e08c7780fc68412.png" alt="remark-link-card" width="100%" height="100%"/>
+    <img class="rlc-image" src="/remark-enhanced-link-card/httpsstatic.npmjs.com338e4905a2684ca96e08c7780fc68412.png" alt="remark-enhanced-link-card" width="100%" height="100%"/>
   </div>
 </a>
 ```
@@ -270,17 +282,17 @@ Display only hostname of target URL (`bool`, default: `false`)
 If `options.shortenUrl` is `true`, the output will look like this.
 
 ```markdown
-<a class="rlc-container" href="https://www.npmjs.com/package/remark-link-card">
+<a class="rlc-container" href="https://www.npmjs.com/package/remark-enhanced-link-card">
   <div class="rlc-info">
-    <div class="rlc-title">remark-link-card</div>
+    <div class="rlc-title">remark-enhanced-link-card</div>
     <div class="rlc-description">remark plugin to convert literal link to link card</div>
     <div class="rlc-url-container">
-      <img class="rlc-favicon" src="https://www.google.com/s2/favicons?domain=www.npmjs.com" alt="remark-link-card favicon" width="16px" height="16px">
+      <img class="rlc-favicon" src="https://www.google.com/s2/favicons?domain=www.npmjs.com" alt="remark-enhanced-link-card favicon" width="16px" height="16px">
       <span class="rlc-url">www.npmjs.com</span>
     </div>
   </div>
   <div class="rlc-image-container">
-    <img class="rlc-image" src="https://static.npmjs.com/338e4905a2684ca96e08c7780fc68412.png" alt="remark-link-card" width="100%" height="100%"/>
+    <img class="rlc-image" src="https://static.npmjs.com/338e4905a2684ca96e08c7780fc68412.png" alt="remark-enhanced-link-card" width="100%" height="100%"/>
   </div>
 </a>
 ```

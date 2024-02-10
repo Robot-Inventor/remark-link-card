@@ -7,12 +7,21 @@ const sanitize = require('sanitize-filename');
 const he = require('he');
 
 const defaultSaveDirectory = 'public';
-const defaultOutputDirectory = '/remark-link-card/';
+const defaultOutputDirectory = '/remark-enhanced-link-card/';
 
 const rlc = (options) => {
   return async (tree) => {
     transformers = [];
-    visit(tree, 'paragraph', (paragraphNode, index) => {
+    visit(tree, 'paragraph', (paragraphNode, index, parentNode) => {
+      if (paragraphNode.children.length !== 1) {
+        return tree;
+      }
+
+      if (parentNode && parentNode.type === 'listItem') {
+        // If the paragraph is a child of a list item, skip processing.
+        return;
+      }
+
       if (paragraphNode.children.length !== 1) {
         return tree;
       }
@@ -48,7 +57,7 @@ const rlc = (options) => {
     try {
       await Promise.all(transformers.map((t) => t()));
     } catch (error) {
-      console.error(`[remark-link-card] Error: ${error}`);
+      console.error(`[remark-enhanced-link-card] Error: ${error}`);
     }
 
     return tree;
@@ -61,7 +70,7 @@ const getOpenGraph = async (targetUrl) => {
     return result;
   } catch (error) {
     console.error(
-      `[remark-link-card] Error: Failed to get the Open Graph data of ${error.result.requestUrl} due to ${error.result.error}.`
+      `[remark-enhanced-link-card] Error: Failed to get the Open Graph data of ${error.result.requestUrl} due to ${error.result.error}.`
     );
     return undefined;
   }
@@ -123,7 +132,7 @@ const fetchData = async (targetUrl, options) => {
     displayUrl = decodeURI(displayUrl);
   } catch (error) {
     console.error(
-      `[remark-link-card] Error: Cannot decode url: "${url}"\n ${error}`
+      `[remark-enhanced-link-card] Error: Cannot decode url: "${url}"\n ${error}`
     );
   }
 
@@ -180,7 +189,7 @@ const downloadImage = async (url, saveDirectory) => {
     targetUrl = new URL(url);
   } catch (error) {
     console.error(
-      `[remark-link-card] Error: Failed to parse url "${url}"\n ${error}`
+      `[remark-enhanced-link-card] Error: Failed to parse url "${url}"\n ${error}`
     );
   }
   const filename = sanitize(decodeURI(targetUrl.href));
@@ -189,7 +198,7 @@ const downloadImage = async (url, saveDirectory) => {
   try {
     await access(saveFilePath);
     return filename;
-  } catch (error) {}
+  } catch (error) { }
   // check directory existence
   try {
     await access(saveDirectory);
@@ -211,7 +220,7 @@ const downloadImage = async (url, saveDirectory) => {
     writeFile(saveFilePath, buffer);
   } catch (error) {
     console.error(
-      `[remark-link-card] Error: Failed to download image from ${targetUrl.href}\n ${error}`
+      `[remark-enhanced-link-card] Error: Failed to download image from ${targetUrl.href}\n ${error}`
     );
     return undefined;
   }
