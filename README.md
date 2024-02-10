@@ -85,7 +85,7 @@ Bare links are converted to link cards.
   <div class="rlc-info">
     <div class="rlc-title">Example Domain</div>
     <div class="rlc-url-container">
-      <img class="rlc-favicon" src="https://www.google.com/s2/favicons?domain=example.com" alt="Example Domain favicon" width="16px" height="16px">
+      <img class="rlc-favicon" src="https://www.google.com/s2/favicons?domain=example.com" alt="Example Domain favicon" width="16px" height="16px" loading="lazy" decoding="async">
       <span class="rlc-url">http://example.com/</span>
     </div>
   </div>
@@ -96,12 +96,12 @@ Bare links are converted to link cards.
     <div class="rlc-title">remark-enhanced-link-card</div>
     <div class="rlc-description">remark plugin to convert literal link to link card</div>
     <div class="rlc-url-container">
-      <img class="rlc-favicon" src="https://www.google.com/s2/favicons?domain=www.npmjs.com" alt="remark-enhanced-link-card favicon" width="16px" height="16px">
+      <img class="rlc-favicon" src="https://www.google.com/s2/favicons?domain=www.npmjs.com" alt="remark-enhanced-link-card favicon" width="16px" height="16px" loading="lazy" decoding="async">
       <span class="rlc-url">https://www.npmjs.com/package/remark-enhanced-link-card</span>
     </div>
   </div>
   <div class="rlc-image-container">
-    <img class="rlc-image" src="https://static.npmjs.com/338e4905a2684ca96e08c7780fc68412.png" alt="remark-enhanced-link-card" width="100%" height="100%"/>
+    <img class="rlc-image" src="https://static.npmjs.com/338e4905a2684ca96e08c7780fc68412.png" alt="remark-enhanced-link-card" width="100%" height="100%" loading="lazy" decoding="async"/>
   </div>
 </a>
 
@@ -109,7 +109,7 @@ Bare links are converted to link cards.
   <div class="rlc-info">
     <div class="rlc-title">Example Domain</div>
     <div class="rlc-url-container">
-      <img class="rlc-favicon" src="https://www.google.com/s2/favicons?domain=example.com" alt="Example Domain favicon" width="16px" height="16px">
+      <img class="rlc-favicon" src="https://www.google.com/s2/favicons?domain=example.com" alt="Example Domain favicon" width="16px" height="16px" loading="lazy" decoding="async">
       <span class="rlc-url">http://example.com/</span>
     </div>
   </div>
@@ -120,12 +120,12 @@ Bare links are converted to link cards.
     <div class="rlc-title">remark-enhanced-link-card</div>
     <div class="rlc-description">remark plugin to convert literal link to link card</div>
     <div class="rlc-url-container">
-      <img class="rlc-favicon" src="https://www.google.com/s2/favicons?domain=www.npmjs.com" alt="remark-enhanced-link-card favicon" width="16px" height="16px">
+      <img class="rlc-favicon" src="https://www.google.com/s2/favicons?domain=www.npmjs.com" alt="remark-enhanced-link-card favicon" width="16px" height="16px" loading="lazy" decoding="async">
       <span class="rlc-url">https://www.npmjs.com/package/remark-enhanced-link-card</span>
     </div>
   </div>
   <div class="rlc-image-container">
-    <img class="rlc-image" src="https://static.npmjs.com/338e4905a2684ca96e08c7780fc68412.png" alt="remark-enhanced-link-card" width="100%" height="100%"/>
+    <img class="rlc-image" src="https://static.npmjs.com/338e4905a2684ca96e08c7780fc68412.png" alt="remark-enhanced-link-card" width="100%" height="100%" loading="lazy" decoding="async"/>
   </div>
 </a>
 
@@ -255,7 +255,7 @@ Bare links are converted to link cards.
   <div class="rlc-info">
     <div class="rlc-title">Example Domain</div>
     <div class="rlc-url-container">
-      <img class="rlc-favicon" src="/remark-enhanced-link-card/httpswww.google.coms2faviconsdomain=example.com" alt="Example Domain favicon" width="16px" height="16px">
+      <img class="rlc-favicon" src="/remark-enhanced-link-card/httpswww.google.coms2faviconsdomain=example.com" alt="Example Domain favicon" width="16px" height="16px" loading="lazy" decoding="async">
       <span class="rlc-url">http://example.com/</span>
     </div>
   </div>
@@ -266,12 +266,12 @@ Bare links are converted to link cards.
     <div class="rlc-title">remark-enhanced-link-card</div>
     <div class="rlc-description">remark plugin to convert literal link to link card</div>
     <div class="rlc-url-container">
-      <img class="rlc-favicon" src="/remark-enhanced-link-card/httpswww.google.coms2faviconsdomain=www.npmjs.com" alt="remark-enhanced-link-card favicon" width="16px" height="16px">
+      <img class="rlc-favicon" src="/remark-enhanced-link-card/httpswww.google.coms2faviconsdomain=www.npmjs.com" alt="remark-enhanced-link-card favicon" width="16px" height="16px" loading="lazy" decoding="async">
       <span class="rlc-url">https://www.npmjs.com/package/remark-enhanced-link-card</span>
     </div>
   </div>
   <div class="rlc-image-container">
-    <img class="rlc-image" src="/remark-enhanced-link-card/httpsstatic.npmjs.com338e4905a2684ca96e08c7780fc68412.png" alt="remark-enhanced-link-card" width="100%" height="100%"/>
+    <img class="rlc-image" src="/remark-enhanced-link-card/httpsstatic.npmjs.com338e4905a2684ca96e08c7780fc68412.png" alt="remark-enhanced-link-card" width="100%" height="100%" loading="lazy" decoding="async"/>
   </div>
 </a>
 ```
@@ -288,12 +288,12 @@ If `options.shortenUrl` is `true`, the output will look like this.
     <div class="rlc-title">remark-enhanced-link-card</div>
     <div class="rlc-description">remark plugin to convert literal link to link card</div>
     <div class="rlc-url-container">
-      <img class="rlc-favicon" src="https://www.google.com/s2/favicons?domain=www.npmjs.com" alt="remark-enhanced-link-card favicon" width="16px" height="16px">
+      <img class="rlc-favicon" src="https://www.google.com/s2/favicons?domain=www.npmjs.com" alt="remark-enhanced-link-card favicon" width="16px" height="16px" loading="lazy" decoding="async">
       <span class="rlc-url">www.npmjs.com</span>
     </div>
   </div>
   <div class="rlc-image-container">
-    <img class="rlc-image" src="https://static.npmjs.com/338e4905a2684ca96e08c7780fc68412.png" alt="remark-enhanced-link-card" width="100%" height="100%"/>
+    <img class="rlc-image" src="https://static.npmjs.com/338e4905a2684ca96e08c7780fc68412.png" alt="remark-enhanced-link-card" width="100%" height="100%" loading="lazy" decoding="async"/>
   </div>
 </a>
 ```
