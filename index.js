@@ -150,7 +150,7 @@ const fetchData = async (targetUrl, options) => {
 const createLinkCard = (data) => {
   // create favicon element
   const faviconElement = data.faviconSrc
-    ? `<img class="rlc-favicon" src="${data.faviconSrc}" alt="${data.title} favicon" width="16" height="16">`.trim()
+    ? `<img class="rlc-favicon" src="${data.faviconSrc}" alt="${data.title} favicon" width="16" height="16" loading="lazy" decoding="async">`.trim()
     : '';
 
   // create description element
@@ -161,7 +161,7 @@ const createLinkCard = (data) => {
   // create image element
   const imageElement = data.ogImageSrc
     ? `<div class="rlc-image-container">
-      <img class="rlc-image" src="${data.ogImageSrc}" alt="${data.ogImageAlt}" />
+      <img class="rlc-image" src="${data.ogImageSrc}" alt="${data.ogImageAlt}" loading="lazy" decoding="async" />
     </div>`.trim()
     : '';
 

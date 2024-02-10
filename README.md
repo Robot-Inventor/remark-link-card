@@ -7,6 +7,7 @@ Forked from [remark-link-card](https://github.com/gladevise/remark-link-card)
 ## Defference from remark-link-card
 
 - Exclude list items from link card conversion
+- Lazy load and async decode images
 
 ## Requirements
 
