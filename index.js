@@ -3,8 +3,8 @@ const ogs = require('open-graph-scraper');
 const path = require('path');
 const { writeFile, access, mkdir } = require('fs').promises;
 const fetch = require('node-fetch');
-const sanitize = require('sanitize-filename');
 const he = require('he');
+const { createHash } = require("node:crypto");
 
 const defaultSaveDirectory = 'public';
 const defaultOutputDirectory = '/remark-enhanced-link-card/';
@@ -17,12 +17,8 @@ const rlc = (options) => {
         return tree;
       }
 
+      // If the paragraph is a child of a list item, skip processing.
       if (parentNode && parentNode.type === 'listItem') {
-        // If the paragraph is a child of a list item, skip processing.
-        return;
-      }
-
-      if (paragraphNode.children.length !== 1) {
         return tree;
       }
 
@@ -192,7 +188,8 @@ const downloadImage = async (url, saveDirectory) => {
       `[remark-enhanced-link-card] Error: Failed to parse url "${url}"\n ${error}`
     );
   }
-  const filename = sanitize(decodeURI(targetUrl.href));
+  const hash = createHash("sha256").update(decodeURI(targetUrl.href)).digest("hex");
+  const filename = hash + path.extname(targetUrl.pathname);
   const saveFilePath = path.join(saveDirectory, filename);
   // check file existence(if it is existed, return filename)
   try {
