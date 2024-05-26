@@ -28,6 +28,8 @@ const rlc = (options) => {
       }
 
       visit(paragraphNode, 'text', (textNode) => {
+        if (options.excludeDomains && options.excludeDomains.includes(new URL(textNode.value).hostname)) return;
+
         const urls = textNode.value.match(
           /(https?:\/\/|www(?=\.))([-.\w]+)([^ \t\r\n]*)/g
         );

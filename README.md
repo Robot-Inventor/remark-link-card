@@ -297,3 +297,7 @@ If `options.shortenUrl` is `true`, the output will look like this.
   </div>
 </a>
 ```
+
+###### `options.excludeDomains`
+
+Exclude domains from link card conversion (`Array<string>`, default: `[]`)
