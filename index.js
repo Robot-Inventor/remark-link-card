@@ -9,6 +9,15 @@ const { createHash } = require("node:crypto");
 const defaultSaveDirectory = 'public';
 const defaultOutputDirectory = '/remark-enhanced-link-card/';
 
+const isValidURL = (url) => {
+  try {
+    new URL(url);
+    return true;
+  } catch (error) {
+    return false;
+  }
+};
+
 const rlc = (options) => {
   return async (tree) => {
     transformers = [];
@@ -28,6 +37,7 @@ const rlc = (options) => {
       }
 
       visit(paragraphNode, 'text', (textNode) => {
+        if (!isValidURL(textNode.value)) return;
         if (options.excludeDomains && options.excludeDomains.includes(new URL(textNode.value).hostname)) return;
 
         const urls = textNode.value.match(
